@@ -1,0 +1,151 @@
+﻿<Window x:Class="WPFFILIPPOV_YPR7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFFILIPPOV_YPR7"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="ToggleButton" x:Key="RadioLookToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Grid>
+                            <RadioButton IsChecked="{TemplateBinding IsChecked}"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"/>
+                            <Border Background="Transparent"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" Margin="2,5">
+                <Button x:Name="btnPreviousTab" FontSize="20" Margin="0,0,10,0" Click="btnPreviousTab_Click" Content="Back"/>
+                <Button x:Name="btnNextTab" FontSize="20" Click="btnNextTab_Click" Content="Next&#xD;&#xA;" RenderTransformOrigin="0.78,0.55"/>
+                <TextBlock x:Name="TextBox1" Text="0" Foreground="White"/>
+                <TextBlock x:Name="TextBox2" Text="0" Foreground="White"/>
+                <TextBlock x:Name="TextBox3" Text="" Foreground="White"/>
+                <Button x:Name="btnSelectedTab" FontSize="20" Click="btnSelectedTab_Click" Content="Done&#xD;&#xA;"/>
+            </StackPanel>
+            <TabControl Name="tcSample">
+                <TabItem Header="&#xD;&#xA;question 1">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Самый любимый преподователь нашей группы?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V1_1" Content="Окси"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V1" Click ="Test_V1_Click" Checked="Test_V1_Checked" Content="Егор Олегович"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V1_3" Content="Хутатова"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V1_4" Content="Тяжелкова"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 2">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Кто работает на вахте когда идет практика?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V2_1" Content="Богдан"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V2" Click="Test_V2_Click" Content="Ксюша"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V2_3" Content="Немец"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V2_4" Content="Сергей))"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 3">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Какая практика лучше всего?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V3_1" Content="С утра"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V3" Click="Test_V3_Click" Content="Со второй смены"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V3_3" Content="Никакая"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V3_4" Content="Без разницы"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 4">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Кто недавно починил стул и стол в кабинете Егора Олеговича?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V4_1" Content="Егор Олегович"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V4_2" Content="Паша????...."/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V4_3" Content="Немец"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V4" Click="Test_V4_Click" Content="Сер гей)"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 5">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="15" Content="Кто постоянно опаздывает?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V5_1" Content="Сергей"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V5_2" Content="Егор Олегович?!"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V5" Click="Test_V5_Click" Content="Ну я))?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V5_4" Content="Данил"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 6">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Поставите хотя бы 3, Егор Олегович?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V6_1" Content="Нет"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V6_2" Content="Нет"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V6_3" Content="Нет"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V6" Click="Test_V6_Click" Content="Да"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 7">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="14" Content="Самый балдежный предмет который у нас был за все время?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V7" Click="Test_V7_Click" Content="ТСОЦМИ"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V7_2" Content="ИСРПО?......"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V7_3" Content="Сертификация ИС"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V7_4" Content="Математика??????????"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 8">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Самый главный клоун?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V8_1" Content="Иванов"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V8_2" Content="Немец"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V8_3" Content="Я?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V8" Click="Test_V8_Click" Content="Ушаков"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 9">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Какой курс самый балдежный?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V9_1" Content="1"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V9_2" Content="3"/>
+                            <RadioButton x:Name="Test_V9" IsChecked="False" Click="Test_V9_Click" FontSize="15" Content="2"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V9_4" Content="4(ты че дурак?)"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+                <TabItem Header="&#xD;&#xA;question 10">
+                    <TabItem.Content>
+                        <StackPanel>
+                            <Label FontSize="16" Content="Самый лучший студент группы?"/>
+                            <RadioButton x:Name="Test_V10" IsChecked="False" Click="Test_V10_Click" FontSize="15" Content="Лиза"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V10_2" Content="Данил?"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V10_3" Content="Ушаков"/>
+                            <RadioButton FontSize="15" IsChecked="False" x:Name="Test_V10_4" Content="Я?"/>
+                            <Button Click="btnSelectedTab_Click" FontSize="15" Content="Done" HorizontalAlignment="Left" Height="30" Width="120"/>
+                            <Button Margin="0,10,0,0" Click="Zanovo" FontSize="15" Content="Restart" HorizontalAlignment="Left" Height="30" Width="150"/>
+                        </StackPanel>
+                    </TabItem.Content>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+    </Grid>
+</Window>
